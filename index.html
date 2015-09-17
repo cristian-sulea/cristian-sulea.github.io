@@ -23,7 +23,7 @@
 
 	<script type="text/javascript">
 
-		var count = 20;
+		var count = 19;
 		var counter = setInterval(timer, 1000);
 
 		function timer() {
@@ -39,6 +39,21 @@
 				return;
 			}
 		}
+
+		function loadCSS(hrefCSS) {
+			var cb = function() {
+				var l = document.createElement('link');
+				l.rel = 'stylesheet';
+				l.href = hrefCSS;
+				var h = document.getElementsByTagName('head')[0];
+				h.parentNode.insertBefore(l, h);
+			};
+			var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+			if (raf)
+				raf(cb);
+			else
+				window.addEventListener('load', cb);
+		}
 	</script>
 
 </head>
@@ -51,7 +66,7 @@
 		<p>
 			<a href="http://cristian.sulea.net" title="Cristian Sulea">http://cristian.sulea.net</a>
 		</p>
-		<span id="timer">&nbsp;</span>
+		<span id="timer">redirecting in 20 seconds...</span>
 	</header>
 
 	<footer id="footer">
@@ -69,19 +84,10 @@
 	</footer>
 
 	<script>
-		var cb = function() {
-			var l = document.createElement('link');
-			l.rel = 'stylesheet';
-			l.href = 'assets/css/main.css';
-			var h = document.getElementsByTagName('head')[0];
-			h.parentNode.insertBefore(l, h);
-		};
-		var raf = requestAnimationFrame || mozRequestAnimationFrame
-				|| webkitRequestAnimationFrame || msRequestAnimationFrame;
-		if (raf)
-			raf(cb);
-		else
-			window.addEventListener('load', cb);
+		loadCSS("assets/css/main.css");
+	</script>
+	<script>
+		loadCSS("http://fonts.googleapis.com/css?family=Roboto:400,700");
 	</script>
 
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
