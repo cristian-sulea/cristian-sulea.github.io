@@ -3,43 +3,33 @@
 
 <head>
 
-	<title>Cristian Sulea - Senior Java Developer (& Software Architect)</title>
+<title>Cristian Sulea - Senior Java Developer (&amp; Software Architect)</title>
 
-	<meta charset="utf-8">
+<meta name="description" content="Landing page for my personal website (http://cristian.sulea.net).">
+<meta name="keywords" content="Cristian Sulea">
+<meta name="author" content="Cristian Sulea">
 
-	<meta name="description" content="Landing page for my personal website (http://cristian.sulea.net).">
-	<meta name="keywords" content="Cristian Sulea">
-	<meta name="author" content="Cristian Sulea">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta http-equiv="refresh" content="20; url=http://cristian.sulea.net">
 
-	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-
-	<meta http-equiv="refresh" content="20; url=http://cristian.sulea.net">
-
-	<script type="text/javascript">
-
-		var count = 19;
-		var counter = setInterval(timer, 1000);
-
-		function timer() {
-			if (count == 1 ) {
-				document.getElementById("timer").innerHTML = "redirecting...";
-			} else {
-				document.getElementById("timer").innerHTML = "redirecting in " + count + " seconds...";
-			}
-			count = count - 1;
-			if (count <= 0) {
-				clearInterval(counter);
-				window.location.href = "http://cristian.sulea.net";
-				return;
-			}
-		}
-	</script>
+<style type="text/css">
+#loader {
+	z-index: 9999;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	background-image: url("images/loader.gif");
+	background-position: center;
+	background-repeat: no-repeat;
+}
+</style>
 
 </head>
 
@@ -47,7 +37,7 @@
 
 	<header id="header">
 		<h1>Cristian Sulea</h1>
-		<p>Senior Java Developer (& Software Architect)</p>
+		<p>Senior Java Developer (&amp; Software Architect)</p>
 		<p>
 			<a href="http://cristian.sulea.net" title="Cristian Sulea">http://cristian.sulea.net</a>
 		</p>
@@ -67,6 +57,42 @@
 		</ul>
 
 	</footer>
+
+	<div id="loader"></div>
+
+	<script type="text/javascript">
+		var count = 19;
+		var counter = setInterval(timer, 1000);
+
+		function timer() {
+			if (count == 1) {
+				document.getElementById("timer").innerHTML = "redirecting...";
+			} else {
+				document.getElementById("timer").innerHTML = "redirecting in "
+						+ count + " seconds...";
+			}
+			count = count - 1;
+			if (count <= 0) {
+				clearInterval(counter);
+				window.location.href = "http://cristian.sulea.net";
+				return;
+			}
+		}
+
+		function loadCSS(hrefCSS) {
+			var l = document.createElement('link');
+			l.rel = 'stylesheet';
+			l.href = hrefCSS;
+			var h = document.getElementsByTagName('head')[0];
+			h.parentNode.insertBefore(l, h);
+		}
+	</script>
+
+	<script type="text/javascript">
+		loadCSS("assets/css/main.css");
+	</script>
+	<!--[if lte IE 8]><script>loadCSS("assets/css/ie8.css");</script><![endif]-->
+	<!--[if lte IE 8]><script>loadCSS("assets/css/ie9.css");</script><![endif]-->
 
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script src="assets/js/main.js"></script>

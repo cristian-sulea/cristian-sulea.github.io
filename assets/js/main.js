@@ -28,6 +28,8 @@
 		window.addEventListener('load', function() {
 			window.setTimeout(function() {
 				$body.classList.remove('is-loading');
+				var loader = document.getElementById("loader");
+				loader.parentNode.removeChild(loader);
 			}, 100);
 		});
 
