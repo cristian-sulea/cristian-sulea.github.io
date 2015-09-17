@@ -28,9 +28,15 @@
 		window.addEventListener('load', function() {
 			window.setTimeout(function() {
 				$body.classList.remove('is-loading');
+			}, 100);
+			window.setTimeout(function() {
+				var loader = document.getElementById("loader");
+				loader.className = "hidden";
+			}, 500);
+			window.setTimeout(function() {
 				var loader = document.getElementById("loader");
 				loader.parentNode.removeChild(loader);
-			}, 100);
+			}, 3000);
 		});
 
 	// Slideshow Background.
