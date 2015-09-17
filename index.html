@@ -15,7 +15,7 @@
 
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 
-	<link rel="stylesheet" href="assets/css/main.css" />
+<!-- 	<link rel="stylesheet" href="assets/css/main.css" /> -->
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 
@@ -67,6 +67,22 @@
 		</ul>
 
 	</footer>
+
+	<script>
+		var cb = function() {
+			var l = document.createElement('link');
+			l.rel = 'stylesheet';
+			l.href = 'assets/css/main.css';
+			var h = document.getElementsByTagName('head')[0];
+			h.parentNode.insertBefore(l, h);
+		};
+		var raf = requestAnimationFrame || mozRequestAnimationFrame
+				|| webkitRequestAnimationFrame || msRequestAnimationFrame;
+		if (raf)
+			raf(cb);
+		else
+			window.addEventListener('load', cb);
+	</script>
 
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script async src="assets/js/main.js"></script>
