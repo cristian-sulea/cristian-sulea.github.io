@@ -15,11 +15,11 @@
 
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 
-<!-- 	<link rel="stylesheet" href="assets/css/main.css" /> -->
+	<link rel="stylesheet" href="assets/css/main.css" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 
-	<meta http-equiv="refresh" content="30; http://cristian.sulea.net">
+	<meta http-equiv="refresh" content="20; url=http://cristian.sulea.net">
 
 	<script type="text/javascript">
 
@@ -38,21 +38,6 @@
 				window.location.href = "http://cristian.sulea.net";
 				return;
 			}
-		}
-
-		function loadCSS(hrefCSS) {
-			var cb = function() {
-				var l = document.createElement('link');
-				l.rel = 'stylesheet';
-				l.href = hrefCSS;
-				var h = document.getElementsByTagName('head')[0];
-				h.parentNode.insertBefore(l, h);
-			};
-			var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
-			if (raf)
-				raf(cb);
-			else
-				window.addEventListener('load', cb);
 		}
 	</script>
 
@@ -83,15 +68,8 @@
 
 	</footer>
 
-	<script>
-		loadCSS("assets/css/main.css");
-	</script>
-	<script>
-		loadCSS("http://fonts.googleapis.com/css?family=Roboto:400,700");
-	</script>
-
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-	<script async src="assets/js/main.js"></script>
+	<script src="assets/js/main.js"></script>
 
 </body>
 </html>
