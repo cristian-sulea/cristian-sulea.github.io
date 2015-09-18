@@ -17,6 +17,7 @@
 <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 
 <style type="text/css">
+
 #loader {
 	z-index: 9999;
 	position: fixed;
@@ -74,8 +75,7 @@
 			if (count == 1) {
 				document.getElementById("timer").innerHTML = "redirecting...";
 			} else {
-				document.getElementById("timer").innerHTML = "redirecting in "
-						+ count + " seconds...";
+				document.getElementById("timer").innerHTML = "redirecting in " + count + " seconds...";
 			}
 			count = count - 1;
 			if (count <= 0) {
@@ -85,12 +85,13 @@
 			}
 		}
 
-		function loadCSS(hrefCSS) {
+		function loadCSS(href) {
 			var l = document.createElement('link');
-			l.rel = 'stylesheet';
-			l.href = hrefCSS;
+			l.rel = "stylesheet";
+			l.type = "text/css";
+			l.href = href;
 			var h = document.getElementsByTagName('head')[0];
-			h.parentNode.insertBefore(l, h);
+			h.appendChild(l);
 		}
 	</script>
 
