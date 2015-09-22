@@ -277,7 +277,7 @@
 									<report>index</report>
 									<report>summary</report>
 									<report>dependencies</report>
-									<!-- <report>project-team</report> -->
+<!-- 									<report>project-team</report> -->
 									<report>license</report>
 								</reports>
 							</reportSet>
@@ -323,24 +323,24 @@
 						</reportSets>
 					</plugin>
 
-					<!-- <plugin> -->
-					<!-- <groupId>org.apache.maven.plugins</groupId> -->
-					<!-- <artifactId>maven-changelog-plugin</artifactId> -->
-					<!-- <version>2.2</version> -->
-					<!-- <reportSets> -->
-					<!-- <reportSet> -->
-					<!-- <configuration> -->
-					<!-- <type>range</type> -->
-					<!-- <range>999</range> -->
-					<!-- </configuration> -->
-					<!-- <reports> -->
-					<!-- <report>changelog</report> -->
-					<!-- <report>file-activity</report> -->
-					<!-- <report>dev-activity</report> -->
-					<!-- </reports> -->
-					<!-- </reportSet> -->
-					<!-- </reportSets> -->
-					<!-- </plugin> -->
+<!-- 					<plugin> -->
+<!-- 						<groupId>org.apache.maven.plugins</groupId> -->
+<!-- 						<artifactId>maven-changelog-plugin</artifactId> -->
+<!-- 						<version>2.2</version> -->
+<!-- 						<reportSets> -->
+<!-- 							<reportSet> -->
+<!-- 								<configuration> -->
+<!-- 									<type>range</type> -->
+<!-- 									<range>999</range> -->
+<!-- 								</configuration> -->
+<!-- 								<reports> -->
+<!-- 									<report>changelog</report> -->
+<!-- 									<report>file-activity</report> -->
+<!-- 									<report>dev-activity</report> -->
+<!-- 								</reports> -->
+<!-- 							</reportSet> -->
+<!-- 						</reportSets> -->
+<!-- 					</plugin> -->
 
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
