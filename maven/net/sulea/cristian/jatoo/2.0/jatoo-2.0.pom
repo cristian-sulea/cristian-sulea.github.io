@@ -58,7 +58,7 @@
 	<distributionManagement>
 		<repository>
 			<id>maven-deploy</id>
-			<url>file://${basedir}\target\maven-deploy</url>
+			<url>file://${basedir}/target/maven-deploy</url>
 		</repository>
 	</distributionManagement>
 
