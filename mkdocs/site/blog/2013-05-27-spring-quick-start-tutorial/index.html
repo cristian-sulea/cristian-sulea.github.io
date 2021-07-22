@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<meta name="description" content="">
+	<link rel="canonical" href="https://cristian.sulea.net/blog/2013-05-27-spring-quick-start-tutorial/">
+	<meta name="author" content="Cristian Sulea">
+	
+	<link rel="shortcut icon" href="../../default-icon-032.png">
+	
+        <title>Spring - Quick start tutorial - Cristian Sulea</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/color-brewer.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+	<meta property="og:title" content="" />
+	<meta property="og:description" content="" />
+	<meta property="og:url" content="https://cristian.sulea.net/blog/2013-05-27-spring-quick-start-tutorial/" />
+	<meta property="og:image:width" content="256" />
+	<meta property="og:image:height" content="256" />
+	<meta property="og:image" content="../../default-icon-256.png" />
+	
+
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "WebSite",
+
+			"name": "",
+			"description": "",
+			"url": "https://cristian.sulea.net/blog/2013-05-27-spring-quick-start-tutorial/",
+
+			"author": {
+				"@type" : "Person",
+				"name" : "Cristian Sulea",
+				"url" : "https://cristian.sulea.net/"
+			}
+		}
+	</script>
+
+
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Cristian Sulea</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../" class="nav-link">Knowledge Base</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../projects/" class="nav-link">Projects</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#spring-quick-start-tutorial" class="nav-link">Spring - Quick start tutorial</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#spring-dependencies" class="nav-link">Spring dependencies</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#spring-bean-the-java-class" class="nav-link">Spring bean (the java class)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#spring-bean-configuration-file" class="nav-link">Spring bean configuration file</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#run-it" class="nav-link">Run It</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="spring-quick-start-tutorial">Spring - Quick start tutorial</h1>
+<p>The <a href="http://spring.io">Spring Framework</a> is an open source application framework and inversion of control container for the Java platform.
+The framework's core features can be used by any Java application, but there are extensions for building web applications on top of the Java EE platform.
+Although the framework does not impose any specific programming model, it has become popular in the Java community as an alternative to, replacement for,
+or even addition to the Enterprise JavaBean (EJB) model (<a href="http://en.wikipedia.org/wiki/Spring_Framework">Wikipedia / Spring Framework</a>).</p>
+<p>A key element of Spring is infrastructural support at the application level: Spring focuses on the "plumbing" of enterprise applications
+so that teams can focus on application-level business logic, without unnecessary ties to specific deployment environments.</p>
+<h2 id="spring-dependencies">Spring dependencies</h2>
+<p>The Spring dependencies are available for download via <a href="http://search.maven.org">Maven Central Repository</a>.</p>
+<p><em>pom.xml</em></p>
+<p>{% highlight xml %}
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                        http://maven.apache.org/xsd/maven-4.0.0.xsd"></p>
+<pre><code>&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+&lt;groupId&gt;spring-tutorials&lt;/groupId&gt;
+&lt;artifactId&gt;spring-quick-tutorial&lt;/artifactId&gt;
+&lt;version&gt;1.0&lt;/version&gt;
+
+&lt;name&gt;Spring - Quick tutorial&lt;/name&gt;
+
+&lt;dependencies&gt;
+
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+        &lt;version&gt;3.1.4.RELEASE&lt;/version&gt;
+    &lt;/dependency&gt;
+
+&lt;/dependencies&gt;
+</code></pre>
+<p></project>
+{% endhighlight %}</p>
+<h2 id="spring-bean-the-java-class">Spring bean (the java class)</h2>
+<p><em>SpringBean.java</em></p>
+<p>{% highlight java %}
+package spring.quick.tutorial;</p>
+<p>/*<em>
+ * A simple spring bean.
+ </em>/
+public class SpringBean {</p>
+<pre><code>private String name;
+
+public void setName(String name) {
+    this.name = name;
+}
+
+public String getName() {
+    return name;
+}
+
+public void printName() {
+    System.out.println("name: " + name);
+}
+</code></pre>
+<p>}
+{% endhighlight %}</p>
+<h2 id="spring-bean-configuration-file">Spring bean configuration file</h2>
+<p><em>spring.xml</em></p>
+<p>{% highlight xml %}
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd"></p>
+<pre><code>&lt;bean id="bean" class="spring.quick.tutorial.SpringBean"&gt;
+    &lt;property name="name" value="Cristian Sulea" /&gt;
+&lt;/bean&gt;
+</code></pre>
+<p></beans>
+{% endhighlight %}</p>
+<h2 id="run-it">Run It</h2>
+<p><em>SpringQuickTutorial.java</em></p>
+<p>{% highlight java %}
+package spring.quick.tutorial;</p>
+<p>import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;</p>
+<p>public class SpringQuickTutorial {</p>
+<pre><code>public static void main(String[] args) {
+
+    ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+    SpringBean bean = (SpringBean) context.getBean("bean");
+
+    bean.printName();
+}
+</code></pre>
+<p>}
+{% endhighlight %}</p>
+<p><em>Output:</em></p>
+<p>{% highlight txt %}
+name: Cristian Sulea
+{% endhighlight %}</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+	<hr>
+	<p>
+		Copyright © 2021 <a href="https://cristian.sulea.net">Cristian Sulea</a>
+		<br/>
+		Built with <a href="https://www.mkdocs.org/">MkDocs</a>
+	</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
