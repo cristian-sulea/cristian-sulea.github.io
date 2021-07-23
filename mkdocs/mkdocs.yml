@@ -8,6 +8,7 @@ nav:
     - Knowledge Base: blog.md
     - Projects: projects.md
 
+
 theme:
     name: spacelab
     custom_dir: customization/

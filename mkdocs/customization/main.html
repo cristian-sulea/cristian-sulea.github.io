@@ -11,7 +11,7 @@
 	{% if config.site_author %}<meta name="author" content="{{ config.site_author }}">{% endif %}
 	
 	{% if page.meta.icon %}<link rel="shortcut icon" href="{{ page.meta.icon|url }}">
-	{% else %}<link rel="shortcut icon" href="{{ 'default-icon-032.png'|url }}">
+	{% else %}<link rel="shortcut icon" href="{{ 'img/default-icon-032.png'|url }}">
 	{% endif %}
 	
 {%- endblock %}
@@ -24,7 +24,7 @@
 	<meta property="og:image:width" content="256" />
 	<meta property="og:image:height" content="256" />
 	{% if page.meta.og_icon %}<link rel="shortcut icon" href="{{ page.meta.og_icon|url }}">
-	{% else %}<meta property="og:image" content="{{ 'default-icon-256.png'|url }}" />
+	{% else %}<meta property="og:image" content="{{ 'img/default-icon-256.png'|url }}" />
 	{% endif %}
 
 	<script type="application/ld+json">
