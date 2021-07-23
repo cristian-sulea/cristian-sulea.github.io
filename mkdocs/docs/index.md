@@ -1,8 +1,8 @@
 ---
 title: Cristian Sulea
 description: Senior Java Developer (& Software Architect), PSS Prosoft Solutions, February 2008 - Present, Bucharest, Romania
-icon:    index-icon-032.png
-og_icon: index-icon-256.png
+icon:    img/index-icon-032.png
+og_icon: img/index-icon-256.png
 ---
 
 # Cristian Sulea
