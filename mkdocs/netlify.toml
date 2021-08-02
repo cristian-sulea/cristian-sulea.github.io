@@ -3,8 +3,6 @@ publish = "site"
 command = """
 restore_home_cache ".cache" "pip cache" &&
 restore_cwd_cache '.venv' 'python virtualenv' &&
-pip3 install -q poetry &&
-poetry config virtualenvs.in-project true &&
-poetry install -v &&
+pip3 install -q mkdocs-bootswatch &&
 mkdocs build -d site
 """
