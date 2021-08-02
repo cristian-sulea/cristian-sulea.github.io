@@ -5,9 +5,8 @@ site_url: https://cristian.sulea.net
 site_author: Cristian Sulea
 
 nav:
-    - Knowledge Base: blog.md
-    - Projects: projects.md
-
+    - Knowledge Base: blog/
+    - Projects: projects/
 
 theme:
     name: spacelab
