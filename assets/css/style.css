@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 3rem;
-  font-weight: calc(var(--default-text-weight) - 100);
+  font-weight: calc(var(--default-headings-weight) - 100);
 }
 
 h2 {
@@ -129,14 +129,39 @@ code {
   padding-right: 1px;
 }
 
+b,
+strong {
+  font-weight: bolder;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
   }
 }
-b,
-strong {
-  font-weight: bolder;
+@media (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+    font-weight: var(--default-headings-weight);
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+  h4 {
+    font-size: 1.2rem;
+  }
+  h5 {
+    font-size: 1.1rem;
+  }
+  h6 {
+    font-size: 1rem;
+  }
+  pre {
+    padding: 0;
+  }
 }
 
 pre,
@@ -169,6 +194,12 @@ samp {
   padding-left: 1rem;
 }
 
+@media (max-width: 800px) {
+  .site-wrapper {
+    padding-right: var(--default-border-size-bold);
+    padding-left: var(--default-border-size-bold);
+  }
+}
 .site-title {
   font-size: var(--site-title-text-size);
   line-height: calc(2 * var(--site-title-text-size));
@@ -215,7 +246,7 @@ samp {
 .site-nav .page-link:last-child {
   margin-bottom: 0.4rem;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 800px) {
   .site-nav {
     /*position: static;*/
     float: right;
