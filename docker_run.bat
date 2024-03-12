@@ -1,1 +1,0 @@
-docker run --name=cristian-sulea.github.io -d -p 8000:8000 --mount type=bind,source=%CD%/mkdocs,target=/mkdocs mkdocs
