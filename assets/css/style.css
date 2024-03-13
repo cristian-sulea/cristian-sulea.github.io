@@ -13,7 +13,7 @@
   --default-quote-color: #919191;
   --default-border-color: #C6C6C6;
   --default-border-size: 1px;
-  --default-border-size-bold: 0.2rem;
+  --default-border-size-bold: 0.25rem;
   --default-border-radius: 3px;
 }
 
@@ -139,7 +139,7 @@ strong {
     scroll-behavior: smooth;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   h1 {
     font-size: 2rem;
     font-weight: var(--default-headings-weight);
@@ -163,15 +163,6 @@ strong {
     padding: 0;
   }
 }
-
-pre,
-code,
-kbd,
-samp {
-  font-family: var(--default-code-font);
-  xfont-size: 1em;
-}
-
 :root {
   --site-title-text-size: 1.5rem;
 }
@@ -184,6 +175,8 @@ samp {
 
 .site-footer {
   border-top: var(--default-border-size) solid var(--default-border-color);
+  padding-top: 1rem;
+  text-align: center;
 }
 
 .site-wrapper {
@@ -194,7 +187,7 @@ samp {
   padding-left: 1rem;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   .site-wrapper {
     padding-right: var(--default-border-size-bold);
     padding-left: var(--default-border-size-bold);
@@ -246,7 +239,7 @@ samp {
 .site-nav .page-link:last-child {
   margin-bottom: 0.4rem;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 600px) {
   .site-nav {
     /*position: static;*/
     float: right;
@@ -270,6 +263,31 @@ samp {
   .site-nav .page-link:not(:last-child) {
     margin-right: 0.4rem;
   }
+}
+
+.social-links a {
+  color: var(--default-quote-color);
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+.social-links span {
+  font-size: 0.75rem;
+  margin-left: var(--default-border-size-bold);
+}
+
+.social-links svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--default-quote-color);
+  vertical-align: middle;
+}
+
+h1:has(+ blockquote) {
+  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
