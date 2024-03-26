@@ -1,16 +1,21 @@
 :root {
   --default-text-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --default-code-font: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --default-text-size: 20px;
+  --default-text-size: 24px;
   --default-text-weight: 400;
   /*--default-headings-weight: calc(var(--default-text-weight) + 100);*/
   --default-headings-weight: var(--default-text-weight);
   --default-line-height: 1.5;
   --default-text-color: #000;
   --default-text-background-color: #FFF7E8;
+  --default-link-color: #00f;
+  --default-link-color-hover: var(--default-link-color);
+  --default-link-color-visited: var(--default-link-color);
   --default-code-color: #000;
   --default-code-background-color: #EADAB9;
+  --default-code-size: 16px;
   --default-quote-color: #919191;
+  --default-quote-style: italic;
   --default-border-color: #C6C6C6;
   --default-border-size: 1px;
   --default-border-size-bold: 0.25rem;
@@ -23,16 +28,21 @@ html {
 
 body,
 h1, h2, h3, h4, h5, h6, hr,
-p, blockquote, ol, ul,
+p, blockquote, ol, ul, dl,
 pre, code,
-dl, dd, figure {
+figure,
+table,
+input, button, select, optgroup, textarea {
   margin: 0;
   padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6, hr,
-p, blockquote, ol, ul,
-figure, pre, code {
+p, blockquote, ol, ul, dl,
+pre, code,
+figure,
+table,
+input, button, select, optgroup, textarea {
   margin-bottom: 1rem;
 }
 
@@ -45,6 +55,12 @@ body {
   background-color: var(--default-text-background-color);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  overflow-y: scroll;
+  word-wrap: break-word;
+}
+
+body > header {
+  margin-bottom: 1rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -83,14 +99,15 @@ hr {
 }
 
 blockquote {
-  font-style: italic;
+  font-style: var(--default-quote-style);
   color: var(--default-quote-color);
   border-left: var(--default-border-size-bold) solid var(--default-border-color);
   padding-left: 1rem;
 }
 
 ol,
-ul {
+ul,
+dl {
   padding-left: 2rem;
 }
 
@@ -98,13 +115,34 @@ ol ol,
 ul ul,
 ol ul,
 ul ol {
+  padding-left: 1rem;
   margin-bottom: 0;
+}
+
+a {
+  color: var(--default-link-color);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+}
+
+a:visited {
+  color: var(--default-link-color-visited);
+}
+
+a:hover {
+  color: var(--default-link-color-hover);
+  text-decoration-style: solid;
+  text-decoration-thickness: 1px;
+}
+
+b,
+strong {
+  font-weight: bolder;
 }
 
 pre,
 code {
-  font-family: var(--default-code-font);
-  font-size: 0.875rem;
   color: var(--default-code-color);
   background-color: var(--default-code-background-color);
   border: var(--default-border-size) solid var(--default-border-color);
@@ -112,26 +150,62 @@ code {
 }
 
 pre {
+  font-family: var(--default-code-font);
+  font-size: var(--default-code-size);
   display: block;
   overflow: auto;
-  padding: 0.875rem 0.875rem;
+  padding: var(--default-code-size) var(--default-code-size);
   overflow-x: auto;
 }
 
+code {
+  font-family: var(--default-text-font);
+  font-size: var(--default-text-size);
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
 pre > code {
+  font-family: var(--default-code-font);
+  font-size: var(--default-code-size);
   border: 0;
   padding-left: 0;
   padding-right: 0;
 }
 
-code {
-  padding-left: 1px;
-  padding-right: 1px;
+table {
+  width: 100%;
+  text-align: left;
+  border: var(--default-border-size) solid var(--default-border-color);
+  border-collapse: collapse;
 }
 
-b,
-strong {
-  font-weight: bolder;
+table th, table td {
+  padding: var(--default-border-size-bold);
+  border: var(--default-border-size) solid var(--default-border-color);
+}
+
+table th {
+  background-color: var(--default-code-background-color);
+}
+
+table tr:nth-child(even) {
+  background-color: var(--default-code-background-color);
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  height: calc(var(--default-line-height) * var(--default-text-size) - 2 * var(--default-border-size));
+  border: var(--default-border-size) solid var(--default-border-color);
+  padding-left: var(--default-border-size-bold);
+  padding-right: var(--default-border-size-bold);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -163,20 +237,9 @@ strong {
     padding: 0;
   }
 }
+/* Placeholder to allow the override of the default variables. */
 :root {
   --site-title-text-size: 1.5rem;
-}
-
-.site-header {
-  border-top: var(--default-border-size-bold) solid var(--default-text-color);
-  border-bottom: var(--default-border-size) solid var(--default-border-color);
-  height: calc(2 * var(--site-title-text-size));
-}
-
-.site-footer {
-  border-top: var(--default-border-size) solid var(--default-border-color);
-  padding-top: 1rem;
-  text-align: center;
 }
 
 .site-wrapper {
@@ -193,14 +256,35 @@ strong {
     padding-left: var(--default-border-size-bold);
   }
 }
+body > header {
+  border-top: var(--default-border-size-bold) solid var(--default-text-color);
+  border-bottom: var(--default-border-size) solid var(--default-border-color);
+  height: calc(2 * var(--site-title-text-size));
+  font-weight: calc(var(--default-text-weight) - 100);
+}
+body > header a {
+  color: var(--default-quote-color);
+  text-decoration: none;
+}
+body > header a:visited {
+  color: var(--default-quote-color);
+}
+body > header a:hover {
+  color: var(--default-quote-color);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+}
+
 .site-title {
   font-size: var(--site-title-text-size);
   line-height: calc(2 * var(--site-title-text-size));
+  float: left;
 }
 
 .site-nav {
   position: absolute;
-  font-size: 0.875rem;
+  /*font-size: 0.875rem;*/
   top: calc(var(--site-title-text-size) - 0.875rem + var(--default-border-size-bold) + var(--default-border-size) + 0px);
   right: 0.5rem;
   background-color: var(--default-text-background-color);
@@ -220,8 +304,11 @@ strong {
   margin-left: 0.4rem;
   margin-right: 0.4rem;
 }
-.site-nav .site-nav-menu-icon > svg path {
-  fill: var(--default-text-color);
+.site-nav .site-nav-menu-icon > svg {
+  width: 1rem;
+}
+.site-nav .site-nav-menu-icon > svg > path {
+  fill: var(--default-quote-color);
 }
 .site-nav input ~ .site-nav-menu {
   clear: both;
@@ -230,20 +317,24 @@ strong {
 .site-nav input:checked ~ .site-nav-menu {
   display: block;
 }
-.site-nav .page-link {
+.site-nav .site-nav-link {
   display: block;
   margin-left: 0.4rem;
   margin-right: 0.4rem;
   margin-bottom: 0;
 }
-.site-nav .page-link:last-child {
+.site-nav .site-nav-link:last-child {
   margin-bottom: 0.4rem;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
   .site-nav {
     /*position: static;*/
     float: right;
     border: 0;
+    padding: 0;
+    position: relative;
+    top: calc(var(--site-title-text-size) - 1rem + var(--default-border-size-bold) + var(--default-border-size) + 0px);
+    right: 0;
   }
   .site-nav label[for=site-nav-trigger] {
     display: none;
@@ -254,40 +345,119 @@ strong {
   .site-nav input ~ .site-nav-menu {
     display: block;
   }
-  .site-nav .page-link {
+  .site-nav .site-nav-link {
     display: inline;
     margin-left: auto;
     margin-right: 0;
     margin-bottom: 0;
   }
-  .site-nav .page-link:not(:last-child) {
-    margin-right: 0.4rem;
+  .site-nav .site-nav-link:not(:last-child) {
+    margin-right: 1rem;
   }
 }
 
-.social-links a {
-  color: var(--default-quote-color);
-  text-decoration: none;
+.social-links-list {
+  list-style: none;
+  padding-left: 0;
+  display: table;
 }
-
-.social-links a:hover {
-  text-decoration: underline;
-}
-
-.social-links span {
-  font-size: 0.75rem;
-  margin-left: var(--default-border-size-bold);
-}
-
-.social-links svg {
+.social-links-list svg {
   width: 1.5rem;
   height: 1.5rem;
   fill: var(--default-quote-color);
   vertical-align: middle;
 }
+.social-links-list span {
+  font-size: 0.75rem;
+  margin-left: var(--default-border-size-bold);
+}
+.social-links-list a {
+  color: var(--default-quote-color);
+}
+.social-links-list a:visited {
+  color: var(--default-quote-color);
+}
+.social-links-list a:hover, .social-links-list a:hover span {
+  color: var(--default-quote-color);
+  text-decoration-style: solid;
+  text-decoration-thickness: 1px;
+}
+
+body > footer {
+  border-top: var(--default-border-size) solid var(--default-border-color);
+  padding-top: 1rem;
+}
+body > footer a {
+  color: var(--default-quote-color);
+}
+body > footer a:visited {
+  color: var(--default-quote-color);
+}
+body > footer a:hover {
+  color: var(--default-quote-color);
+}
+
+body > footer .copyright {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: var(--default-quote-color);
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+body > footer .social-links-list {
+  margin-left: auto;
+  margin-right: auto;
+}
+body > footer .social-links-list li {
+  float: left;
+}
+body > footer .social-links-list svg {
+  margin-right: var(--default-border-size-bold);
+}
+body > footer .social-links-list span {
+  display: none;
+}
 
 h1:has(+ blockquote) {
   margin-bottom: 0;
 }
+
+blockquote > input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-bottom: var(--default-border-size) solid var(--default-border-color);
+  font-style: var(--default-quote-style);
+  color: var(--default-quote-color);
+  background-color: var(--default-text-background-color);
+}
+
+blockquote > input:focus {
+  outline: none;
+}
+
+.blog-post-title {
+  margin: 0;
+  line-height: 1;
+}
+.blog-post-title a {
+  color: var(--default-text-color);
+}
+.blog-post-title a:visited {
+  color: var(--default-text-color);
+}
+.blog-post-title a:hover {
+  color: var(--default-text-color);
+}
+
+.blog-post-meta {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--default-quote-color);
+}
+
+/* Placeholder to allow the override of the default styles or defining custom new ones. */
 
 /*# sourceMappingURL=style.css.map */
