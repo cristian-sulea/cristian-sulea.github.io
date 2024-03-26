@@ -2,38 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>/</loc>
+        <loc>http://cristian-sulea.github.io/</loc>
         <priority>1.00</priority>
     </url>
 
     <url>
-        <loc>//blog</loc>
+        <loc>http://cristian-sulea.github.io//blog</loc>
         <priority>1.00</priority>
     </url>
 
     
     <url>
-        <loc>/blog/jekyll-instant-search</loc>
+        <loc>http://cristian-sulea.github.io/blog/jekyll-instant-search</loc>
         <priority>0.80</priority>
     </url>
     
     <url>
-        <loc>/blog/2024-03-18-welcome-to-jekyll</loc>
+        <loc>http://cristian-sulea.github.io/blog/2024-03-18-welcome-to-jekyll</loc>
         <priority>0.80</priority>
     </url>
     
     <url>
-        <loc>/blog/2024-03-07-welcome-to-jekyll</loc>
+        <loc>http://cristian-sulea.github.io/blog/2024-03-07-welcome-to-jekyll</loc>
         <priority>0.80</priority>
     </url>
     
     <url>
-        <loc>/blog/website-validation-speed-performance-optimization</loc>
+        <loc>http://cristian-sulea.github.io/blog/website-validation-speed-performance-optimization</loc>
         <priority>0.80</priority>
     </url>
     
     <url>
-        <loc>/blog/spring-quick-start-tutorial</loc>
+        <loc>http://cristian-sulea.github.io/blog/spring-quick-start-tutorial</loc>
         <priority>0.80</priority>
     </url>
     
