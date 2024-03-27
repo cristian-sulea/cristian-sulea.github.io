@@ -8,14 +8,14 @@
   <meta http-equiv='expires' content='0'>
   <meta http-equiv='pragma' content='no-cache'>
 
-  <title>Welcome to Jekyll! (8) - Cristian Sulea</title>
-  <meta name="description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many differe..." />
+  <title>Spring - Quick start tutorial - Cristian Sulea</title>
+  <meta name="description" content="The Spring Framework is an open source application framework and inversion of control container for the Java platform.The framework’s core features can ..." />
   <meta name="author" content="Cristian Sulea" />
-  <link rel="canonical" href="http://cristian-sulea.github.io/blog/2024-03-18-welcome-to-jekyll" />
+  <link rel="canonical" href="http://cristian-sulea.github.io/blog/spring-quick-start-tutorial/" />
 
-  <meta property="og:title" content="Welcome to Jekyll! (8) - Cristian Sulea" />
-  <meta property="og:description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many differe..." />
-  <meta property="og:url" content="http://cristian-sulea.github.io/blog/2024-03-18-welcome-to-jekyll" /><link rel="stylesheet" href="/assets/css/style.css"></head><body>
+  <meta property="og:title" content="Spring - Quick start tutorial - Cristian Sulea" />
+  <meta property="og:description" content="The Spring Framework is an open source application framework and inversion of control container for the Java platform.The framework’s core features can ..." />
+  <meta property="og:url" content="http://cristian-sulea.github.io/blog/spring-quick-start-tutorial/" /><link rel="stylesheet" href="/assets/css/style.css"></head><body>
 
     <header>
       <div class="site-wrapper"><a class="site-title" href="/">Cristian Sulea</a><nav class="site-nav">
@@ -29,7 +29,7 @@
           </span>
           </label>
 
-          <div class="site-nav-menu"><a class="site-nav-link" href="/blog">Knowledge Base</a><a class="site-nav-link" href="/content-styles">Content Styles</a><a class="site-nav-link" href="/search">Search</a></div>
+          <div class="site-nav-menu"><a class="site-nav-link" href="/blog/">Knowledge Base</a><a class="site-nav-link" href="/content-styles/">Content Styles</a><a class="site-nav-link" href="/search/">Search</a></div>
 
         </nav>
 
@@ -41,36 +41,128 @@
         <article>
 
   <header>
-    <h1>Welcome to Jekyll! (8)</h1>
+    <h1>Spring - Quick start tutorial</h1>
     <blockquote>
-      <time>Mar 18, 2024</time>
+      <time>May 27, 2013</time>
     </blockquote>
   </header>
 
   <section>
-    <p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+    <p>The <a href="http://spring.io">Spring Framework</a> is an open source application framework and inversion of control container for the Java platform.
+The framework’s core features can be used by any Java application, but there are extensions for building web applications on top of the Java EE platform.
+Although the framework does not impose any specific programming model, it has become popular in the Java community as an alternative to, replacement for,
+or even addition to the Enterprise JavaBean (EJB) model (<a href="http://en.wikipedia.org/wiki/Spring_Framework">Wikipedia / Spring Framework</a>).</p>
 
-<p>Jekyll requires blog post files to be named according to the following format:</p>
+<p>A key element of Spring is infrastructural support at the application level: Spring focuses on the “plumbing” of enterprise applications
+so that teams can focus on application-level business logic, without unnecessary ties to specific deployment environments.</p>
 
-<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
+<h2 id="spring-dependencies">Spring dependencies</h2>
 
-<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<p>The Spring dependencies are available for download via <a href="http://search.maven.org">Maven Central Repository</a>.</p>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<p><em>pom.xml</em></p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;project</span>
+    <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
+    <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+    <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0
+                        http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+ 
+    <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+ 
+    <span class="nt">&lt;groupId&gt;</span>spring-tutorials<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>spring-quick-tutorial<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
+ 
+    <span class="nt">&lt;name&gt;</span>Spring - Quick tutorial<span class="nt">&lt;/name&gt;</span>
+ 
+    <span class="nt">&lt;dependencies&gt;</span>
+ 
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.springframework<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>spring-context<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>3.1.4.RELEASE<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+ 
+    <span class="nt">&lt;/dependencies&gt;</span>
+ 
+<span class="nt">&lt;/project&gt;</span></code></pre></figure>
 
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+<h2 id="spring-bean-the-java-class">Spring bean (the java class)</h2>
+
+<p><em>SpringBean.java</em></p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">spring.quick.tutorial</span><span class="o">;</span>
+
+<span class="cm">/**
+ * A simple spring bean.
+ */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SpringBean</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"name: "</span> <span class="o">+</span> <span class="n">name</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<h2 id="spring-bean-configuration-file">Spring bean configuration file</h2>
+
+<p><em>spring.xml</em></p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;beans</span>
+    <span class="na">xmlns=</span><span class="s">"http://www.springframework.org/schema/beans"</span>
+    <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+    <span class="na">xsi:schemaLocation=</span><span class="s">"http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">"bean"</span> <span class="na">class=</span><span class="s">"spring.quick.tutorial.SpringBean"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">value=</span><span class="s">"Cristian Sulea"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/bean&gt;</span>
+
+<span class="nt">&lt;/beans&gt;</span></code></pre></figure>
+
+<h2 id="run-it">Run It</h2>
+
+<p><em>SpringQuickTutorial.java</em></p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">spring.quick.tutorial</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.context.ApplicationContext</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.support.ClassPathXmlApplicationContext</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SpringQuickTutorial</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="nc">ApplicationContext</span> <span class="n">context</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ClassPathXmlApplicationContext</span><span class="o">(</span><span class="s">"spring.xml"</span><span class="o">);</span>
+        <span class="nc">SpringBean</span> <span class="n">bean</span> <span class="o">=</span> <span class="o">(</span><span class="nc">SpringBean</span><span class="o">)</span> <span class="n">context</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">"bean"</span><span class="o">);</span>
+
+        <span class="n">bean</span><span class="o">.</span><span class="na">printName</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p><em>Output:</em></p>
+
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">name: Cristian Sulea</code></pre></figure>
 
 
-  </section></article>
+  </section><footer>
+  <hr>
+  Sources:
+  <ul><li><a href="http://spring.io">http://spring.io</a></li><li><a href="http://en.wikipedia.org/wiki/Spring_Framework">http://en.wikipedia.org/wiki/Spring_Framework</a></li></ul>
+</footer></article>
       </div>
     </main><footer>
-      <div class="site-wrapper"><div class="copyright">© 2024 <a href=\"https://cristian.sulea.net\">Cristian Sulea</a>. Powered by <a href="https://jekyllrb.com">Jekyll</a> and <a href="https://github.com/cristian-sulea/jekyll-theme-pwkbb">pwkbb</a>.</div><ul class="social-links-list"><li>
+      <div class="site-wrapper"><div class="copyright">© 2024 <a href="https://cristian.sulea.net">Cristian Sulea</a>. Powered by <a href="https://jekyllrb.com">Jekyll</a> and <a href="https://github.com/cristian-sulea/jekyll-theme-pwkbb">pwkbb</a>.</div><ul class="social-links-list"><li>
     <a rel="me" target="_blank" href="https://www.linkedin.com/in/cristiansulea" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px"><path d="M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 16 12 C 14.35499 12 13 13.35499 13 15 C 13 16.64501 14.35499 18 16 18 C 17.64501 18 19 16.64501 19 15 C 19 13.35499 17.64501 12 16 12 z M 16 14 C 16.564129 14 17 14.435871 17 15 C 17 15.564129 16.564129 16 16 16 C 15.435871 16 15 15.564129 15 15 C 15 14.435871 15.435871 14 16 14 z M 14 19 A 1.0001 1.0001 0 0 0 13 20 L 13 35 A 1.0001 1.0001 0 0 0 14 36 L 18 36 A 1.0001 1.0001 0 0 0 19 35 L 19 20 A 1.0001 1.0001 0 0 0 18 19 L 14 19 z M 22 19 A 1.0001 1.0001 0 0 0 21 20 L 21 35 A 1.0001 1.0001 0 0 0 22 36 L 26 36 A 1.0001 1.0001 0 0 0 27 35 L 27 27.5 C 27 26.120455 28.120455 25 29.5 25 C 30.879545 25 32 26.120455 32 27.5 L 32 30 L 32 35 A 1.0001 1.0001 0 0 0 33 36 L 37 36 A 1.0001 1.0001 0 0 0 38 35 L 38 26.5 C 38 22.36961 34.63039 19 30.5 19 C 29.213528 19 28.059744 19.41615 27 19.990234 A 1.0001 1.0001 0 0 0 26 19 L 22 19 z M 15 21 L 17 21 L 17 34 L 15 34 L 15 21 z M 23 21 L 25 21 L 25 21.816406 A 1.0001 1.0001 0 0 0 26.693359 22.537109 C 27.684186 21.585305 29.016683 21 30.5 21 C 33.54961 21 36 23.45039 36 26.5 L 36 34 L 34 34 L 34 30 L 34 27.5 C 34 25.029545 31.970455 23 29.5 23 C 27.029545 23 25 25.029545 25 27.5 L 25 34 L 23 34 L 23 21 z"/></svg><span>LinkedIn</span>
     </a>
   </li><li>
